@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EJERCICIO 1</title>
+    <link rel="stylesheet"  href="css/estilos.css" />
+</head>
+<body>
+    <h3>Declare un vector de capacidad que representan los valores de temperatura promedio diaria tempEnero[] registrada en la ciudad de Salta durante el mes de enero.</h3>
+    <ul>
+        <li>a.	Mostrar el primer elemento del arreglo.</li>
+        <li>b.	Mostrar el último elemento del arreglo.</li>
+        <li>c.	Mostrar la longitud del arreglo recibido por parámetro.</li>
+        <li>d.	Mostrar un arreglo <b>diasCalidos[]</b> cuyos elementos son los días en los cuales las temperaturas estuvieron por encima del promedio mensual.</li>
+        <li>e.	Agrega el "promedio" al final del arreglo <b>tempEnero[].</b>.</li>
+        <li>f.	Agrega el "promedio" al principio del arreglo <b>diasCalidos[].</b></li>
+    </ul>
+    <script>
+        // Declarar el arreglo tempEnero[]
+        let tempEnero = [];
+
+        // Agregar los valores de temperatura al arreglo tempEnero[]
+        tempEnero.push(30.5);  // Ejemplo de temperatura promedio diaria para el primer día de enero
+        tempEnero.push(32.0);  // Ejemplo de temperatura promedio diaria para el segundo día de enero
+        // Agregar el resto de los valores para los demás días de enero
+
+        // a. Mostrar el primer elemento del arreglo
+     
+        document.write("a. El primer elemento del arreglo es: " + tempEnero[0] + "<br>");
+
+        // b. Mostrar el último elemento del arreglo
+        document.write("b. El último elemento del arreglo es: " + tempEnero[tempEnero.length - 1] + "<br>");
+
+        // c. Mostrar la longitud del arreglo
+        document.write("c. La longitud del arreglo es: " + tempEnero.length + "<br>");
+
+        // d. Mostrar un arreglo diasCalidos[] cuyos elementos son los días en los cuales las temperaturas estuvieron por encima del promedio mensual
+        let sumatoria = 0;
+        for (let i = 0; i < tempEnero.length; i++) {
+            sumatoria += tempEnero[i];
+        }
+        let promedio = sumatoria / tempEnero.length;
+
+        let diasCalidos = [];
+        for (let i = 0; i < tempEnero.length; i++) {
+            if (tempEnero[i] > promedio) {
+                diasCalidos.push(i + 1);  // Agregar el día al arreglo diasCalidos[]
+            }
+        }
+
+        document.write("d. Los días en los cuales las temperaturas estuvieron por encima del promedio mensual son: " + diasCalidos.join(", ") + "<br>");
+
+        // e. Agrega el "promedio" al final del arreglo tempEnero[]
+        tempEnero.push(promedio);
+
+        // f. Agrega el "promedio" al principio del arreglo diasCalidos[]
+        diasCalidos.unshift(promedio);
+
+        // Mostrar todo el arreglo tempEnero[]
+        document.write("e. El arreglo tempEnero[] es: " + tempEnero.join(", ") + "<br>");
+
+        // Mostrar todo el arreglo diasCalidos[]
+        document.write("f. El arreglo diasCalidos[] es: " + diasCalidos.join(", ") + "<br>");
+    </script>
+</body>
+</html>

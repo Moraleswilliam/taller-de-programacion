@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EJERCICIO 2</title>
+</head>
+<h3>El argumento "palabras" es un arreglo de strings. Mostrar un string donde todas las palabras estén concatenadas con un espacio entre cada palabra. Ejemplo: ['Hola', 'mundo'] -> ‘Hola Mundo!'. a. Utilice push() y concat() y describas sus observaciones.</h3>
+<body>
+    <script>
+        // Función para concatenar las palabras del arreglo
+        function concatenarPalabras(palabras) {
+            let resultado = '';
+
+            for (let i = 0; i < palabras.length; i++) {
+                resultado += palabras[i] + ' ';
+            }
+
+            return resultado.trim();  // Eliminar el espacio extra al final
+        }
+
+        // Ejemplo de uso
+        let palabras = ['Hola', 'mundo'];
+
+        let resultado = concatenarPalabras(palabras);
+
+        document.write("El resultado de la concatenación es: " + resultado + "<br>");
+
+         // Observaciones:
+        // - La función push() se utiliza para agregar elementos al final de un arreglo. En este caso, no es necesario utilizarlo.
+        // - El método concat() se utiliza para concatenar arreglos. En este caso, no es necesario utilizarlo porque queremos concatenar las palabras en un solo string.
+        // - En lugar de push() y concat(), simplemente utilizamos el operador de concatenación (+) para unir las palabras y un espacio en cada iteración del bucle.
+        // - Para eliminar el espacio extra al final, utilizamos el método trim() que elimina los espacios en blanco al inicio y al final de un string.
+    </script>
+</body>
+</html>
+

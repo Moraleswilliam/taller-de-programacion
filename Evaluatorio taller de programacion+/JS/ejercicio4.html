@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EJERCICIO 4</title>
+</head>
+<h3>Método de Búsqueda Secuencial: (Tomando los arrays del EjERCICIO 1)</h3>
+<p>Vamos a utilizar 2 ciclos For para recorrer el arreglo ‘tempEnero[]’ y verificamos si el elemento es igual al promedio mensual, si encontramos el día que cumple con la condición se almacena su posición en la variable ‘primerDia’ y utilizamos Break para salir del ciclo. En el otro ciclo For hacemos exactamente lo mismo, pero se agrega posición +1 al arreglo de ‘diasIgualesPromedio[]’</p>
+<ul>
+    <li>a. Muestra el primer día en los que su temperatura promedio del día fue igual al promedio mensual. ¿Qué ciclo utilizó? Justifique.</li>
+    <li>b. Muestra el o los días en los que su temperatura promedio fue igual al promedio mensual. </li>
+</ul>
+<body>
+    <script>
+        // Arreglo de temperaturas promedio diarias
+        let tempEnero = [30.5, 32.0, 29.7, 31.2, 30.8, 29.5];
+        
+        // Cálculo del promedio mensual
+        let sumatoria = 0;
+        for (let i = 0; i < tempEnero.length; i++) {
+            sumatoria += tempEnero[i];
+        }
+        let promedio = sumatoria / tempEnero.length;
+        
+        // Búsqueda secuencial del primer día con temperatura igual al promedio mensual
+        let primerDia = -1;
+        for (let i = 0; i < tempEnero.length; i++) {
+            if (tempEnero[i] === promedio) {
+                primerDia = i + 1;
+                break;  // Se detiene el ciclo al encontrar el primer día con temperatura igual al promedio
+            }
+        }
+        
+        // Mostramos el resultado en la pagina
+        document.write("El primer día con temperatura igual al promedio mensual es el día " + primerDia + "<br>");
+
+        // Mostramos los días en los que la temperatura promedio es igual al promedio mensual
+        let diasIguales = [];
+        for (let i = 0; i < tempEnero.length; i++) {
+            if (tempEnero[i] === promedio) {
+                diasIguales.push(i + 1);
+            }
+        }
+
+        // Mostra dias en la pagina
+        document.write("Los días en los que la temperatura promedio es igual al promedio mensual son: " + diasIguales.join(", ") + "<br>");
+    </script>
+</body>
+</html>

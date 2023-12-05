@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EJERCICIO 3</title>
+</head>
+<h3>Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente. Realiza un algoritmo donde dado el número del día de la semana, retorne: "Es fin de semana" si el día corresponde a "Sábado" o "Domingo", y "Es día de Clases" en caso contrario.</h3>
+<body>
+    <script>
+        // Función para determinar el tipo de día de la semana
+        function determinarTipoDia(numDia) {
+            if (numDia === 1 || numDia === 7) {
+                return "Es fin de semana";
+            } else {
+                return "Es día de Clases";
+            }
+        }
+
+        // Ejemplo de uso
+        let numDia = 4;  // Ejemplo de día de la semana (Jueves)
+
+        let resultado = determinarTipoDia(numDia);
+
+        document.write("El resultado es: " + resultado + "<br>");
+
+        // Observaciones:
+        // - Utilizamos una función llamada determinarTipoDia() que recibe el número del día de la semana como argumento.
+        // - Dentro de la función, comparamos el número del día con 1 y 7 para determinar si corresponde a un fin de semana (Sábado o Domingo).
+        // - Si el número del día es 1 o 7, retornamos el mensaje "Es fin de semana".
+        // - En caso contrario, retornamos el mensaje "Es día de Clases".
+    </script>
+</body>
+</html>
